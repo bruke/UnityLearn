@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="540" viewBox="0 0 840 540">
+  <defs>
+    <marker id="arr2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="840" height="540" fill="#ffffff"/>
+  <text x="420" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">ShaderLab 文件结构</text>
+
+  <!-- 根 -->
+  <rect x="320" y="55" width="200" height="40" rx="10" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="420" y="80" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">Shader "Custom/Name"</text>
+
+  <!-- 三个子块 -->
+  <line x1="420" y1="95" x2="420" y2="120" stroke="#4a6fa5" stroke-width="2"/>
+  <line x1="420" y1="120" x2="150" y2="120" stroke="#4a6fa5" stroke-width="1.5"/>
+  <line x1="420" y1="120" x2="420" y2="120" stroke="#4a6fa5" stroke-width="1.5"/>
+  <line x1="420" y1="120" x2="700" y2="120" stroke="#4a6fa5" stroke-width="1.5"/>
+  <line x1="150" y1="120" x2="150" y2="145" stroke="#4a6fa5" stroke-width="2" marker-end="url(#arr2)"/>
+  <line x1="420" y1="120" x2="420" y2="145" stroke="#4a6fa5" stroke-width="2" marker-end="url(#arr2)"/>
+  <line x1="700" y1="120" x2="700" y2="145" stroke="#4a6fa5" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <!-- Properties -->
+  <rect x="50" y="148" width="200" height="44" rx="10" fill="#fdf0e7" stroke="#d9833a" stroke-width="2"/>
+  <text x="150" y="175" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#a05a20">Properties</text>
+
+  <rect x="50" y="210" width="200" height="34" rx="6" fill="#fdf8f2" stroke="#ecc9a5" stroke-width="1"/>
+  <text x="150" y="232" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">Color 颜色</text>
+  <rect x="50" y="250" width="200" height="34" rx="6" fill="#fdf8f2" stroke="#ecc9a5" stroke-width="1"/>
+  <text x="150" y="272" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">Range 数值范围</text>
+  <rect x="50" y="290" width="200" height="34" rx="6" fill="#fdf8f2" stroke="#ecc9a5" stroke-width="1"/>
+  <text x="150" y="312" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">2D / Cube 纹理</text>
+
+  <!-- SubShader -->
+  <rect x="320" y="148" width="200" height="44" rx="10" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="420" y="175" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#3a6e31">SubShader</text>
+
+  <rect x="320" y="210" width="200" height="34" rx="6" fill="#f2faf0" stroke="#bfe0b6" stroke-width="1"/>
+  <text x="420" y="232" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">Tags（队列/类型）</text>
+  <rect x="320" y="250" width="200" height="34" rx="6" fill="#f2faf0" stroke="#bfe0b6" stroke-width="1"/>
+  <text x="420" y="272" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">LOD（复杂度等级）</text>
+  <rect x="320" y="290" width="200" height="34" rx="6" fill="#f2faf0" stroke="#bfe0b6" stroke-width="1"/>
+  <text x="420" y="312" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">Pass 通道（可多个）</text>
+
+  <!-- Pass 细节 -->
+  <line x1="420" y1="324" x2="420" y2="355" stroke="#5a9e4f" stroke-width="2" marker-end="url(#arr2)"/>
+  <rect x="320" y="358" width="200" height="44" rx="10" fill="#5a9e4f" stroke="#3a6e31" stroke-width="2"/>
+  <text x="420" y="385" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#fff">Pass { 渲染实现 }</text>
+
+  <rect x="330" y="420" width="90" height="30" rx="6" fill="#f2faf0" stroke="#bfe0b6" stroke-width="1"/>
+  <text x="375" y="440" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#333">渲染状态</text>
+  <rect x="425" y="420" width="90" height="30" rx="6" fill="#f2faf0" stroke="#bfe0b6" stroke-width="1"/>
+  <text x="470" y="440" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#333">LightMode</text>
+  <rect x="330" y="460" width="90" height="30" rx="6" fill="#f2faf0" stroke="#bfe0b6" stroke-width="1"/>
+  <text x="375" y="480" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#333">HLSL 顶点/片元</text>
+  <rect x="425" y="460" width="90" height="30" rx="6" fill="#f2faf0" stroke="#bfe0b6" stroke-width="1"/>
+  <text x="470" y="480" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#333">变体指令</text>
+
+  <!-- FallBack -->
+  <rect x="600" y="148" width="200" height="44" rx="10" fill="#f4e6f7" stroke="#a35fae" stroke-width="2"/>
+  <text x="700" y="175" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#7a3d85">FallBack</text>
+
+  <rect x="600" y="210" width="200" height="40" rx="6" fill="#faf0fb" stroke="#e0b9e5" stroke-width="1"/>
+  <text x="700" y="234" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">硬件不支持时的备用 Shader</text>
+
+  <!-- 底部说明 -->
+  <rect x="50" y="400" width="200" height="110" rx="8" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="150" y="425" text-anchor="middle" font-size="12" font-family="sans-serif" font-weight="bold" fill="#8a6d1a">Properties 属性类型</text>
+  <text x="150" y="448" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Float / Range / Color</text>
+  <text x="150" y="467" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">2D / 3D / Cube</text>
+  <text x="150" y="486" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Vector</text>
+
+  <rect x="600" y="400" width="200" height="110" rx="8" fill="#eef4fd" stroke="#9db8dd" stroke-width="1.5"/>
+  <text x="700" y="425" text-anchor="middle" font-size="12" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">渲染队列 Queue</text>
+  <text x="700" y="448" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Background 1000</text>
+  <text x="700" y="467" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Geometry 2000（默认）</text>
+  <text x="700" y="486" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Transparent 3000</text>
+  <text x="700" y="505" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Overlay 4000</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="460" viewBox="0 0 860 460">
+  <defs>
+    <marker id="arrhc5" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="460" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">补充元数据原理</text>
+
+  <!-- 打包时 -->
+  <text x="430" y="75" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">打包时（IL2CPP 裁剪）</text>
+  <rect x="60" y="90" width="740" height="100" rx="10" fill="#fdf4ec" stroke="#d9833a" stroke-width="1.5"/>
+  <text x="100" y="120" font-size="12" font-family="sans-serif" fill="#333">C# 源码 ──► IL2CPP 编译</text>
+  <text x="100" y="145" font-size="12" font-family="sans-serif" fill="#333">只保留"被静态引用"的类型和成员，其余裁剪（Linker）</text>
+  <text x="100" y="170" font-size="12" font-family="sans-serif" fill="#c0392b">→ 泛型实例化 / 反射 / LINQ 等方法可能缺失！</text>
+
+  <line x1="430" y1="190" x2="430" y2="215" stroke="#4a6fa5" stroke-width="2.5" marker-end="url(#arrhc5)"/>
+
+  <!-- 运行时 -->
+  <text x="430" y="245" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#3a6e31">运行时（补充元数据）</text>
+  <rect x="60" y="260" width="740" height="110" rx="10" fill="#eef7ea" stroke="#5a9e4f" stroke-width="1.5"/>
+  <text x="100" y="292" font-size="12" font-family="sans-serif" fill="#333">加载完整版元数据：类型定义 / 方法 IL 指令 / 泛型信息</text>
+  <text x="100" y="320" font-size="12" font-family="sans-serif" fill="#333">RuntimeApi.LoadMetadataForAOTAssembly(bytes, mode)</text>
+  <text x="100" y="348" font-size="12" font-family="monospace" fill="#3a6e31">HomologousImageMode.SuperSet（全量最安全）</text>
+
+  <!-- 模式表 -->
+  <rect x="60" y="395" width="740" height="50" rx="8" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="430" y="420" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#8a6d1a">模式</text>
+  <text x="430" y="440" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">SuperSet(全量/最安全) · Consistent(裁剪后/省内存) · 开发用 SuperSet，线上用 Consistent</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="460" viewBox="0 0 860 460">
+  <defs>
+    <marker id="arrm3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="460" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">Addressables 架构</text>
+
+  <!-- 顶层 -->
+  <rect x="300" y="60" width="260" height="60" rx="12" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2.5"/>
+  <text x="430" y="88" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">Addressables</text>
+  <text x="430" y="110" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#4a6fa5">逻辑地址 Key 加载</text>
+
+  <!-- 依赖层 -->
+  <rect x="60" y="160" width="720" height="110" rx="12" fill="#f4f8fd" stroke="#9db8dd" stroke-width="2"/>
+  <text x="420" y="188" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">Addressables 底层自动管理</text>
+  <text x="110" y="215" font-size="12" font-family="sans-serif" fill="#333">① 依赖自动处理（无需手动查 Manifest）</text>
+  <text x="110" y="238" font-size="12" font-family="sans-serif" fill="#333">② 引用计数：Load +1 / Release -1，归零自动卸载</text>
+  <text x="110" y="261" font-size="12" font-family="sans-serif" fill="#333">③ 远程/本地加载 · Catalog 版本管理 · Label 批量加载</text>
+
+  <!-- 中间层 -->
+  <rect x="160" y="300" width="170" height="60" rx="10" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="245" y="328" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#3a6e31">Group 分组</text>
+  <text x="245" y="348" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#5a9e4f">UI/场景/角色</text>
+
+  <rect x="355" y="300" width="170" height="60" rx="10" fill="#fdf0e7" stroke="#d9833a" stroke-width="2"/>
+  <text x="440" y="328" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#a05a20">AssetBundle</text>
+  <text x="440" y="348" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#d9833a">底层载体</text>
+
+  <rect x="550" y="300" width="170" height="60" rx="10" fill="#f4e6f7" stroke="#a35fae" stroke-width="2"/>
+  <text x="635" y="328" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#7a3d85">Asset 资源</text>
+  <text x="635" y="348" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#a35fae">Prefab/纹理/场景</text>
+
+  <!-- 箭头 -->
+  <line x1="430" y1="120" x2="430" y2="158" stroke="#4a6fa5" stroke-width="2.5" marker-end="url(#arrm3)"/>
+  <line x1="245" y1="270" x2="245" y2="298" stroke="#5a9e4f" stroke-width="2" marker-end="url(#arrm3)"/>
+  <line x1="440" y1="270" x2="440" y2="298" stroke="#d9833a" stroke-width="2" marker-end="url(#arrm3)"/>
+  <line x1="635" y1="270" x2="635" y2="298" stroke="#a35fae" stroke-width="2" marker-end="url(#arrm3)"/>
+  <line x1="335" y1="330" x2="353" y2="330" stroke="#555" stroke-width="2" marker-end="url(#arrm3)"/>
+  <line x1="530" y1="330" x2="548" y2="330" stroke="#555" stroke-width="2" marker-end="url(#arrm3)"/>
+
+  <!-- 加载/释放 API -->
+  <rect x="40" y="390" width="380" height="50" rx="8" fill="#eef7ea" stroke="#bfe0b6" stroke-width="1.5"/>
+  <text x="230" y="413" text-anchor="middle" font-size="12" font-family="monospace" fill="#3a6e31">Addressables.LoadAssetAsync("Player")</text>
+  <text x="230" y="432" text-anchor="middle" font-size="12" font-family="monospace" fill="#3a6e31">Addressables.Release(handle)</text>
+
+  <rect x="440" y="390" width="380" height="50" rx="8" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="630" y="413" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#8a6d1a">引用计数 0 → 自动卸载底层 Bundle</text>
+</svg>

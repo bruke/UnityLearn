@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="460" viewBox="0 0 860 460">
+  <defs>
+    <marker id="arrhc10" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="460" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">HybridCLR 工程落地全景</text>
+
+  <!-- 分层 -->
+  <rect x="40" y="60" width="250" height="280" rx="12" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="165" y="90" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">随包（首包）</text>
+  <rect x="60" y="110" width="210" height="40" rx="8" fill="#fff" stroke="#4a6fa5" stroke-width="1.5"/>
+  <text x="165" y="135" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#2b4a7a">AOT 程序集（原生）</text>
+  <rect x="60" y="160" width="210" height="40" rx="8" fill="#fff" stroke="#4a6fa5" stroke-width="1.5"/>
+  <text x="165" y="185" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#2b4a7a">HybridCLR Runtime</text>
+  <rect x="60" y="210" width="210" height="40" rx="8" fill="#fff" stroke="#4a6fa5" stroke-width="1.5"/>
+  <text x="165" y="235" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#2b4a7a">热更框架 + 加载器</text>
+  <rect x="60" y="260" width="210" height="40" rx="8" fill="#fff" stroke="#4a6fa5" stroke-width="1.5"/>
+  <text x="165" y="285" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#2b4a7a">核心资源</text>
+  <text x="165" y="330" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">不可热更</text>
+
+  <!-- 中间下载 -->
+  <rect x="310" y="60" width="250" height="280" rx="12" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="435" y="90" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#3a6e31">热更（下载）</text>
+  <rect x="330" y="110" width="210" height="40" rx="8" fill="#fff" stroke="#5a9e4f" stroke-width="1.5"/>
+  <text x="435" y="135" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#3a6e31">热更 DLL（业务）</text>
+  <rect x="330" y="160" width="210" height="40" rx="8" fill="#fff" stroke="#5a9e4f" stroke-width="1.5"/>
+  <text x="435" y="185" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#3a6e31">补充元数据</text>
+  <rect x="330" y="210" width="210" height="40" rx="8" fill="#fff" stroke="#5a9e4f" stroke-width="1.5"/>
+  <text x="435" y="235" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#3a6e31">业务资源</text>
+  <text x="435" y="330" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">可热更</text>
+
+  <!-- 服务器 -->
+  <rect x="580" y="60" width="240" height="280" rx="12" fill="#fdf4ec" stroke="#d9833a" stroke-width="2"/>
+  <text x="700" y="90" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#a05a20">服务器 / CDN</text>
+  <rect x="600" y="110" width="200" height="40" rx="8" fill="#fff" stroke="#d9833a" stroke-width="1.5"/>
+  <text x="700" y="135" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#a05a20">版本信息</text>
+  <rect x="600" y="160" width="200" height="40" rx="8" fill="#fff" stroke="#d9833a" stroke-width="1.5"/>
+  <text x="700" y="185" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#a05a20">热更包</text>
+  <rect x="600" y="210" width="200" height="40" rx="8" fill="#fff" stroke="#d9833a" stroke-width="1.5"/>
+  <text x="700" y="235" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#a05a20">资源增量包</text>
+  <text x="700" y="330" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">灰度 + 回滚</text>
+
+  <!-- 箭头 -->
+  <line x1="290" y1="170" x2="308" y2="170" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrhc10)"/>
+  <line x1="560" y1="170" x2="578" y2="170" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrhc10)"/>
+
+  <!-- 底部流程 -->
+  <rect x="40" y="375" width="780" height="60" rx="10" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="430" y="400" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#8a6d1a">发布流程</text>
+  <text x="430" y="423" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">编译热更 DLL → 生成元数据 → 打包资源 → 上传服务器 → 更新版本 → 客户端热更生效</text>
+</svg>

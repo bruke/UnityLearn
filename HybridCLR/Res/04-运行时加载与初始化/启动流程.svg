@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="460" viewBox="0 0 860 460">
+  <defs>
+    <marker id="arrhc4" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="460" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">启动流程时序</text>
+
+  <!-- 步骤列 -->
+  <rect x="40" y="70" width="250" height="55" rx="10" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="165" y="98" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">① 资源热更</text>
+  <text x="165" y="118" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#4a6fa5">下载差异资源</text>
+  <line x1="165" y1="125" x2="165" y2="148" stroke="#4a6fa5" stroke-width="2.5" marker-end="url(#arrhc4)"/>
+
+  <rect x="40" y="150" width="250" height="55" rx="10" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="165" y="178" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#3a6e31">② HybridCLR 运行时</text>
+  <text x="165" y="198" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#5a9e4f">IL2CPP 启动自动初始化</text>
+  <line x1="165" y1="205" x2="165" y2="228" stroke="#4a6fa5" stroke-width="2.5" marker-end="url(#arrhc4)"/>
+
+  <rect x="40" y="230" width="250" height="55" rx="10" fill="#fdf0e7" stroke="#d9833a" stroke-width="2"/>
+  <text x="165" y="258" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#a05a20">③ 加载补充元数据</text>
+  <text x="165" y="278" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#d9833a">必须先于热更 DLL</text>
+  <line x1="165" y1="285" x2="165" y2="308" stroke="#4a6fa5" stroke-width="2.5" marker-end="url(#arrhc4)"/>
+
+  <rect x="40" y="310" width="250" height="55" rx="10" fill="#f4e6f7" stroke="#a35fae" stroke-width="2"/>
+  <text x="165" y="338" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#7a3d85">④ 加载热更 DLL</text>
+  <text x="165" y="358" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#a35fae">Assembly.Load(bytes)</text>
+  <line x1="165" y1="365" x2="165" y2="388" stroke="#4a6fa5" stroke-width="2.5" marker-end="url(#arrhc4)"/>
+
+  <rect x="40" y="390" width="250" height="55" rx="10" fill="#e8f8f2" stroke="#2a9d74" stroke-width="2"/>
+  <text x="165" y="418" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#1d6f50">⑤ 解析入口执行</text>
+  <text x="165" y="438" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#2a9d74">GetType + Invoke</text>
+
+  <!-- 右侧说明 -->
+  <rect x="340" y="90" width="470" height="130" rx="10" fill="#f7f7f7" stroke="#ddd" stroke-width="1.5"/>
+  <text x="575" y="120" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#333">关键代码</text>
+  <text x="370" y="150" font-size="12" font-family="monospace" fill="#2b4a7a">RuntimeApi.LoadMetadataForAOTAssembly(</text>
+  <text x="370" y="172" font-size="12" font-family="monospace" fill="#2b4a7a">    metaBytes, HomologousImageMode.SuperSet);</text>
+  <text x="370" y="196" font-size="12" font-family="monospace" fill="#3a6e31">Assembly hotfix = Assembly.Load(dllBytes);</text>
+  <text x="370" y="216" font-size="12" font-family="monospace" fill="#7a3d85">type.GetMethod("Main").Invoke(null, null);</text>
+
+  <rect x="340" y="250" width="470" height="150" rx="10" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="575" y="280" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#8a6d1a">要点</text>
+  <text x="370" y="310" font-size="12" font-family="sans-serif" fill="#333">• 补充元数据必须先于热更 DLL 加载</text>
+  <text x="370" y="335" font-size="12" font-family="sans-serif" fill="#333">• DLL 只能加载字节数组（不能按路径）</text>
+  <text x="370" y="360" font-size="12" font-family="sans-serif" fill="#333">• 推荐用接口入口解耦（见 06 章）</text>
+  <text x="370" y="385" font-size="12" font-family="sans-serif" fill="#333">• 热更失败要有降级逻辑</text>
+</svg>

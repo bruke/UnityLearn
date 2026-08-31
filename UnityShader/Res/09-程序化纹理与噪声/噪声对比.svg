@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="420" viewBox="0 0 860 420">
+  <rect width="860" height="420" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">四种噪声对比</text>
+
+  <!-- 值噪声 -->
+  <rect x="30" y="60" width="185" height="200" rx="8" fill="#f4f8fd" stroke="#9db8dd" stroke-width="1.5"/>
+  <text x="122" y="90" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">值噪声</text>
+  <text x="122" y="110" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Value Noise</text>
+  <rect x="60" y="125" width="125" height="80" fill="#d9e4f2"/>
+  <rect x="60" y="125" width="50" height="32" fill="#ffffff"/>
+  <rect x="110" y="125" width="50" height="32" fill="#a9c4e6"/>
+  <rect x="60" y="157" width="50" height="32" fill="#c9d9ee"/>
+  <rect x="110" y="157" width="50" height="32" fill="#eef4fd"/>
+  <rect x="60" y="189" width="50" height="32" fill="#8fb0dd"/>
+  <rect x="110" y="189" width="50" height="32" fill="#bcd0ea"/>
+  <text x="122" y="228" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">格点随机值 + 平滑插值</text>
+
+  <!-- Perlin -->
+  <rect x="235" y="60" width="185" height="200" rx="8" fill="#eef7ea" stroke="#bfe0b6" stroke-width="1.5"/>
+  <text x="327" y="90" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#3a6e31">Perlin 噪声</text>
+  <text x="327" y="110" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Perlin Noise</text>
+  <path d="M60,190 Q75,150 90,170 T120,140 T150,180 T170,150 T190,190" fill="none" stroke="#5a9e4f" stroke-width="3"/>
+  <text x="327" y="228" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">随机梯度 + 平滑过渡</text>
+
+  <!-- Voronoi -->
+  <rect x="440" y="60" width="185" height="200" rx="8" fill="#fdf4ec" stroke="#f0c8a5" stroke-width="1.5"/>
+  <text x="532" y="90" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#a05a20">Voronoi 噪声</text>
+  <text x="532" y="110" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Voronoi</text>
+  <rect x="470" y="125" width="125" height="80" fill="none" stroke="#a05a20" stroke-width="1.5"/>
+  <polygon points="500,125 560,125 560,175 540,205 480,205 470,170" fill="#e8b98a" stroke="#a05a20" stroke-width="1.5"/>
+  <polygon points="560,125 595,125 595,175 575,180 560,175" fill="#f0d0b0" stroke="#a05a20" stroke-width="1.5"/>
+  <polygon points="470,170 480,205 470,205" fill="#f0d0b0" stroke="#a05a20" stroke-width="1.5"/>
+  <text x="532" y="228" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">最近细胞中心距离</text>
+
+  <!-- FBM -->
+  <rect x="645" y="60" width="185" height="200" rx="8" fill="#f4e6f7" stroke="#e0b9e5" stroke-width="1.5"/>
+  <text x="737" y="90" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#7a3d85">分形叠加 FBM</text>
+  <text x="737" y="110" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Fractal Brownian</text>
+  <path d="M680,170 Q690,150 700,165 T720,155 T740,175 T760,160 T780,170" fill="none" stroke="#a35fae" stroke-width="2"/>
+  <path d="M680,185 Q695,170 710,182 T740,178 T760,188 T785,180" fill="none" stroke="#c997d1" stroke-width="2"/>
+  <path d="M680,200 Q690,195 700,198 T730,195 T755,200 T785,196" fill="none" stroke="#e0b9e5" stroke-width="2"/>
+  <text x="737" y="228" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">多层不同频率叠加</text>
+
+  <!-- 应用表 -->
+  <text x="430" y="290" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#333">应用场景</text>
+  <rect x="30" y="305" width="800" height="90" rx="8" fill="#f7f7f7" stroke="#ddd" stroke-width="1"/>
+  <text x="60" y="332" font-size="13" font-family="sans-serif" fill="#333">值噪声 → 云、烟雾、随机分布</text>
+  <text x="60" y="354" font-size="13" font-family="sans-serif" fill="#333">Perlin / FBM → 地形、大理石、熔岩、流动纹理</text>
+  <text x="60" y="376" font-size="13" font-family="sans-serif" fill="#333">Voronoi → 瓷砖、晶体、生物组织、砖墙</text>
+</svg>

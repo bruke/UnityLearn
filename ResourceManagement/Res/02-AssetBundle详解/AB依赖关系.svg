@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="460" viewBox="0 0 860 460">
+  <defs>
+    <marker id="arrm2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="460" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">AssetBundle 依赖关系</text>
+
+  <!-- 主 Bundle -->
+  <rect x="300" y="60" width="260" height="80" rx="12" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2.5"/>
+  <text x="430" y="95" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">prefabs/player (Bundle)</text>
+  <text x="430" y="118" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#4a6fa5">Player.prefab</text>
+
+  <!-- 依赖线 -->
+  <line x1="360" y1="140" x2="180" y2="210" stroke="#4a6fa5" stroke-width="2" marker-end="url(#arrm2)"/>
+  <line x1="430" y1="140" x2="430" y2="210" stroke="#4a6fa5" stroke-width="2" marker-end="url(#arrm2)"/>
+  <line x1="500" y1="140" x2="680" y2="210" stroke="#4a6fa5" stroke-width="2" marker-end="url(#arrm2)"/>
+  <text x="245" y="185" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#c0392b">依赖</text>
+  <text x="398" y="185" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#c0392b">依赖</text>
+  <text x="605" y="185" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#c0392b">依赖</text>
+
+  <!-- 依赖 Bundle -->
+  <rect x="70" y="212" width="220" height="80" rx="10" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="180" y="245" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#3a6e31">materials/player (Bundle)</text>
+  <text x="180" y="268" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#5a9e4f">Player.mat</text>
+
+  <rect x="320" y="212" width="220" height="80" rx="10" fill="#fdf0e7" stroke="#d9833a" stroke-width="2"/>
+  <text x="430" y="245" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#a05a20">shaders/core (Bundle)</text>
+  <text x="430" y="268" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#d9833a">URP/Lit.shader</text>
+
+  <rect x="570" y="212" width="220" height="80" rx="10" fill="#f4e6f7" stroke="#a35fae" stroke-width="2"/>
+  <text x="680" y="245" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#7a3d85">textures/player (Bundle)</text>
+  <text x="680" y="268" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#a35fae">Player_Albedo.png</text>
+
+  <!-- Manifest -->
+  <rect x="300" y="330" width="260" height="90" rx="12" fill="#fffbe6" stroke="#e0c060" stroke-width="2"/>
+  <text x="430" y="360" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#8a6d1a">AssetBundleManifest</text>
+  <text x="430" y="385" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">GetAllDependencies(bundleName)</text>
+  <text x="430" y="407" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">返回依赖列表 → 先加载依赖</text>
+
+  <line x1="430" y1="292" x2="430" y2="328" stroke="#8a6d1a" stroke-width="2" marker-end="url(#arrm2)"/>
+  <text x="462" y="315" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#8a6d1a">记录依赖</text>
+
+  <!-- 加载顺序 -->
+  <rect x="40" y="390" width="780" height="50" rx="8" fill="#eef4fd" stroke="#9db8dd" stroke-width="1.5"/>
+  <text x="430" y="413" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">加载顺序：先加载所有依赖 Bundle，再加载目标 Bundle，卸载时引用计数归零才 Unload</text>
+</svg>

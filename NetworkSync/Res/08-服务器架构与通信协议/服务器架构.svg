@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="440" viewBox="0 0 860 440">
+  <defs>
+    <marker id="arrn8" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="440" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">分布式服务器架构</text>
+
+  <!-- 客户端 -->
+  <rect x="40" y="80" width="160" height="90" rx="10" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="120" y="118" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">客户端</text>
+  <text x="120" y="140" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Unity</text>
+  <text x="120" y="158" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">多人客户端</text>
+
+  <line x1="200" y1="125" x2="248" y2="125" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrn8)"/>
+
+  <!-- 网关 -->
+  <rect x="250" y="80" width="160" height="90" rx="10" fill="#fdf0e7" stroke="#d9833a" stroke-width="2"/>
+  <text x="330" y="118" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#a05a20">网关 Gateway</text>
+  <text x="330" y="140" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">连接/鉴权/限流</text>
+  <text x="330" y="158" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">消息路由</text>
+
+  <line x1="410" y1="125" x2="458" y2="125" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrn8)"/>
+
+  <!-- 逻辑服 -->
+  <rect x="460" y="80" width="160" height="90" rx="10" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="540" y="118" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#3a6e31">逻辑服</text>
+  <text x="540" y="140" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">游戏逻辑/状态</text>
+  <text x="540" y="158" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">水平扩展</text>
+
+  <line x1="620" y1="125" x2="668" y2="125" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrn8)"/>
+
+  <!-- 存储 -->
+  <rect x="670" y="80" width="160" height="90" rx="10" fill="#f4e6f7" stroke="#a35fae" stroke-width="2"/>
+  <text x="750" y="118" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#7a3d85">存储/DB</text>
+  <text x="750" y="140" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">玩家数据</text>
+  <text x="750" y="158" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Redis/MySQL</text>
+
+  <!-- 战斗服 -->
+  <rect x="250" y="250" width="200" height="70" rx="10" fill="#fdf4ec" stroke="#d9833a" stroke-width="2"/>
+  <text x="350" y="280" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#a05a20">战斗服（对局）</text>
+  <text x="350" y="302" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">帧同步/状态同步</text>
+
+  <line x1="330" y1="170" x2="330" y2="248" stroke="#4a6fa5" stroke-width="2.5" marker-end="url(#arrn8)"/>
+
+  <!-- 协议 -->
+  <rect x="40" y="360" width="780" height="55" rx="8" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="430" y="384" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#8a6d1a">通信协议：消息头(OpCode/长度/序号) + 消息体(Protobuf)</text>
+  <text x="430" y="406" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">心跳保活 · 序号去重 · 长度前缀分包 · 加密签名</text>
+</svg>

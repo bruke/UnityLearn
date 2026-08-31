@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="440" viewBox="0 0 860 440">
+  <defs>
+    <marker id="arr8" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="440" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">MatCap 原理：法线 → UV → 采样</text>
+
+  <!-- 球体 -->
+  <circle cx="210" cy="220" r="120" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="210" y="215" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#3a6e31">物体球体</text>
+  <text x="210" y="236" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#5a9e4f">(真实几何体)</text>
+
+  <!-- 法线向量 -->
+  <line x1="210" y1="220" x2="288" y2="158" stroke="#c0392b" stroke-width="3" marker-end="url(#arr8)"/>
+  <text x="300" y="150" font-size="13" font-family="sans-serif" font-weight="bold" fill="#c0392b">法线 N</text>
+  <line x1="210" y1="220" x2="250" y2="112" stroke="#2b4a7a" stroke-width="3" marker-end="url(#arr8)"/>
+  <text x="232" y="102" font-size="13" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">视线 V</text>
+
+  <!-- 变换箭头 -->
+  <line x1="340" y1="220" x2="400" y2="220" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arr8)"/>
+  <text x="370" y="208" text-anchor="middle" font-size="11" font-family="monospace" fill="#c0392b">UNITY_MATRIX_V</text>
+
+  <!-- UV 映射 -->
+  <rect x="402" y="120" width="190" height="180" rx="8" fill="#fdf4ec" stroke="#d9833a" stroke-width="1.5"/>
+  <text x="497" y="150" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#a05a20">UV 计算</text>
+  <text x="420" y="178" font-size="12" font-family="monospace" fill="#333">normalVS.xy</text>
+  <text x="420" y="198" font-size="12" font-family="monospace" fill="#333">  * 0.5 + 0.5</text>
+  <text x="420" y="224" font-size="11" font-family="sans-serif" fill="#555">把 [-1,1] 映射到 [0,1]</text>
+  <text x="420" y="248" font-size="12" font-family="monospace" fill="#333">N(0,0,1)→(0.5,0.5)中心</text>
+  <text x="420" y="268" font-size="12" font-family="monospace" fill="#333">N(1,0,0)→(1.0,0.5)右侧</text>
+  <text x="420" y="288" font-size="12" font-family="monospace" fill="#333">N(0,1,0)→(0.5,1.0)顶部</text>
+
+  <!-- MatCap 纹理 -->
+  <rect x="620" y="90" width="190" height="260" rx="8" fill="#f4f8fd" stroke="#9db8dd" stroke-width="1.5"/>
+  <text x="715" y="118" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">MatCap 纹理</text>
+  <circle cx="715" cy="210" r="70" fill="#dbe7f5" stroke="#4a6fa5" stroke-width="1"/>
+  <circle cx="740" cy="180" r="14" fill="#ffffff" opacity="0.9"/>
+  <circle cx="695" cy="200" r="26" fill="#a9c4e6"/>
+  <circle cx="735" cy="225" r="18" fill="#c9d9ee"/>
+  <text x="715" y="300" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">光源与高光已烘焙在图中</text>
+  <text x="715" y="322" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">一次采样 = 完整光照</text>
+
+  <!-- 采样箭头 -->
+  <line x1="592" y1="220" x2="618" y2="220" stroke="#d9833a" stroke-width="3" marker-end="url(#arr8)"/>
+  <text x="605" y="208" text-anchor="middle" font-size="11" font-family="monospace" fill="#c0392b">uv</text>
+
+  <!-- 输出 -->
+  <rect x="620" y="370" width="190" height="50" rx="8" fill="#e8f8f2" stroke="#2a9d74" stroke-width="1.5"/>
+  <text x="715" y="394" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#1d6f50">结果颜色</text>
+  <text x="715" y="412" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#2a9d74">matCapColor × albedo</text>
+  <line x1="715" y1="352" x2="715" y2="368" stroke="#2a9d74" stroke-width="2" marker-end="url(#arr8)"/>
+
+  <!-- 底部要点 -->
+  <rect x="40" y="360" width="500" height="60" rx="8" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="290" y="385" text-anchor="middle" font-size="12" font-family="sans-serif" font-weight="bold" fill="#8a6d1a">要点</text>
+  <text x="290" y="407" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">背面翻转法线（dot(N,V)&lt;0 时取 -N）；只做 1 次纹理采样，性能极高</text>
+</svg>

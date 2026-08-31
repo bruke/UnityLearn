@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="440" viewBox="0 0 860 440">
+  <defs>
+    <marker id="arrh1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="440" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">热更新整体架构</text>
+
+  <!-- 客户端三层 -->
+  <rect x="60" y="60" width="520" height="300" rx="12" fill="#f7f7f7" stroke="#999" stroke-width="1.5"/>
+  <text x="320" y="88" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#333">客户端</text>
+
+  <!-- 原生层 -->
+  <rect x="90" y="105" width="460" height="70" rx="8" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="320" y="132" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">原生层（AOT，随包不可热更）</text>
+  <text x="320" y="155" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#4a6fa5">引擎封装 · 热更框架 · 网络层 · 资源加载</text>
+
+  <!-- 脚本层 -->
+  <rect x="90" y="185" width="460" height="70" rx="8" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="320" y="212" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#3a6e31">热更脚本层（可更新）</text>
+  <text x="320" y="235" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#5a9e4f">Lua / IL / HybridCLR · 游戏逻辑 · UI · 战斗</text>
+
+  <!-- 资源层 -->
+  <rect x="90" y="265" width="460" height="70" rx="8" fill="#fdf0e7" stroke="#d9833a" stroke-width="2"/>
+  <text x="320" y="292" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#a05a20">资源层（可更新）</text>
+  <text x="320" y="315" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#d9833a">AssetBundle / Addressables · 模型纹理 UI 配置表</text>
+
+  <!-- 服务端 -->
+  <rect x="620" y="60" width="200" height="300" rx="12" fill="#fdf4ec" stroke="#d9833a" stroke-width="2"/>
+  <text x="720" y="95" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#a05a20">更新服务器 / CDN</text>
+  <line x1="680" y1="120" x2="760" y2="120" stroke="#d9833a" stroke-width="1.5"/>
+  <text x="720" y="150" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">version.json</text>
+  <text x="720" y="172" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">脚本补丁</text>
+  <text x="720" y="194" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">资源增量包</text>
+  <text x="720" y="216" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">全量/差分包</text>
+
+  <!-- 连接 -->
+  <line x1="590" y1="200" x2="618" y2="200" stroke="#c0392b" stroke-width="2.5" marker-end="url(#arrh1)"/>
+  <line x1="618" y1="180" x2="590" y2="180" stroke="#c0392b" stroke-width="2.5" marker-end="url(#arrh1)"/>
+  <text x="604" y="168" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#c0392b">HTTPS</text>
+
+  <!-- 底部选型 -->
+  <rect x="60" y="385" width="760" height="40" rx="8" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="430" y="411" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#8a6d1a">方案选型：新项目 → HybridCLR；Lua 团队 → xLua；老项目维护 → ILRuntime / PuerTS</text>
+</svg>

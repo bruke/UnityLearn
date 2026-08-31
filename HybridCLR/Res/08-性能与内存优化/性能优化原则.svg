@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="460" viewBox="0 0 860 460">
+  <defs>
+    <marker id="arrhc8" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="460" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">性能优化原则：AOT 放热点，热更放业务</text>
+
+  <!-- 左 AOT -->
+  <rect x="40" y="70" width="380" height="200" rx="12" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="230" y="100" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">AOT（原生，性能最高）</text>
+  <text x="70" y="130" font-size="12" font-family="sans-serif" fill="#333">✓ 每帧执行的循环</text>
+  <text x="70" y="154" font-size="12" font-family="sans-serif" fill="#333">✓ 物理 / 寻路 / 碰撞</text>
+  <text x="70" y="178" font-size="12" font-family="sans-serif" fill="#333">✓ 数据压缩 / 加密</text>
+  <text x="70" y="202" font-size="12" font-family="sans-serif" fill="#333">✓ 高频 IO / 渲染相关</text>
+  <text x="230" y="240" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">性能敏感代码放这里</text>
+
+  <!-- 右热更 -->
+  <rect x="450" y="70" width="370" height="200" rx="12" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="635" y="100" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#3a6e31">热更（解释执行）</text>
+  <text x="480" y="130" font-size="12" font-family="sans-serif" fill="#333">✓ 玩法规则 / 状态机</text>
+  <text x="480" y="154" font-size="12" font-family="sans-serif" fill="#333">✓ UI 逻辑 / 事件处理</text>
+  <text x="480" y="178" font-size="12" font-family="sans-serif" fill="#333">✓ 配置读取（低频）</text>
+  <text x="480" y="202" font-size="12" font-family="sans-serif" fill="#333">✓ 运营活动</text>
+  <text x="635" y="240" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">业务逻辑放这里（可热更）</text>
+
+  <!-- 箭头 -->
+  <line x1="420" y1="170" x2="448" y2="170" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrhc8)"/>
+
+  <!-- 优化技巧 -->
+  <rect x="40" y="300" width="780" height="130" rx="10" fill="#f7f7f7" stroke="#ddd" stroke-width="1.5"/>
+  <text x="430" y="330" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#333">热更代码优化技巧</text>
+  <text x="70" y="360" font-size="12" font-family="sans-serif" fill="#333">① 避免频繁跨域调用（批量处理代替逐次调用）</text>
+  <text x="70" y="384" font-size="12" font-family="sans-serif" fill="#333">② 用接口/委托代替反射（反射在解释层很慢）</text>
+  <text x="70" y="408" font-size="12" font-family="sans-serif" fill="#333">③ 缓存委托与类型，避免重复查找</text>
+  <text x="70" y="430" font-size="12" font-family="sans-serif" fill="#333">④ 热更代码同样要避免每帧 GC 分配</text>
+</svg>

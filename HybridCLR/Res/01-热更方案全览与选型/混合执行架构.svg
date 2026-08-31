@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="460" viewBox="0 0 860 460">
+  <defs>
+    <marker id="arrhc1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="460" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">HybridCLR：AOT + Interpreter 混合执行</text>
+
+  <!-- 左侧 AOT -->
+  <rect x="40" y="70" width="370" height="200" rx="12" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="225" y="100" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">AOT 部分（随包）</text>
+  <rect x="70" y="120" width="310" height="40" rx="8" fill="#fff" stroke="#4a6fa5" stroke-width="1.5"/>
+  <text x="225" y="145" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#2b4a7a">C# → C++ → 原生机器码</text>
+  <text x="225" y="180" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">引擎封装 · 热更框架 · 网络 · 资源</text>
+  <text x="225" y="205" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">原生执行 · 性能最高 · 不可热更</text>
+
+  <!-- 右侧 Interpreter -->
+  <rect x="450" y="70" width="370" height="200" rx="12" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="635" y="100" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#3a6e31">Interpreter 部分（热更）</text>
+  <rect x="480" y="120" width="310" height="40" rx="8" fill="#fff" stroke="#5a9e4f" stroke-width="1.5"/>
+  <text x="635" y="145" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#3a6e31">C# → DLL(IL) → 运行时下载</text>
+  <text x="635" y="180" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">游戏逻辑 · UI · 战斗 · 活动</text>
+  <text x="635" y="205" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">解释执行 · 可下载更新</text>
+
+  <!-- 中间连接 -->
+  <line x1="410" y1="170" x2="448" y2="170" stroke="#c0392b" stroke-width="3" marker-end="url(#arrhc1)"/>
+  <line x1="448" y1="150" x2="410" y2="150" stroke="#c0392b" stroke-width="3" marker-end="url(#arrhc1)"/>
+  <text x="429" y="132" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#c0392b">共用同一</text>
+  <text x="429" y="196" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#c0392b">运行时</text>
+
+  <!-- 补充元数据 -->
+  <rect x="40" y="300" width="780" height="70" rx="10" fill="#fdf4ec" stroke="#d9833a" stroke-width="1.5"/>
+  <text x="430" y="328" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#a05a20">AOT 补充元数据</text>
+  <text x="430" y="354" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">热更代码可能引用 AOT 被裁剪的类型 → LoadMetadataForAOTAssembly 补全元数据</text>
+
+  <!-- 对比表 -->
+  <rect x="40" y="395" width="780" height="50" rx="8" fill="#eef7ea" stroke="#bfe0b6" stroke-width="1.5"/>
+  <text x="430" y="420" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#3a6e31">对比</text>
+  <text x="430" y="440" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">纯 C# · 性能高（原生） · 泛型/反射/async 完整支持 · 新项目首选</text>
+</svg>

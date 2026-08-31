@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="460" viewBox="0 0 860 460">
+  <defs>
+    <marker id="arrn3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="460" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">状态同步流程</text>
+
+  <!-- 服务器 -->
+  <rect x="330" y="160" width="200" height="70" rx="10" fill="#fdf0e7" stroke="#d9833a" stroke-width="2.5"/>
+  <text x="430" y="192" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#a05a20">服务器（权威）</text>
+  <text x="430" y="214" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">计算并维护世界状态</text>
+
+  <!-- 客户端 -->
+  <rect x="40" y="300" width="200" height="70" rx="10" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="140" y="332" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">客户端 A</text>
+  <text x="140" y="354" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">发送操作指令</text>
+
+  <rect x="620" y="300" width="200" height="70" rx="10" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="720" y="332" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#3a6e31">客户端 B</text>
+  <text x="720" y="354" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">接收状态并渲染</text>
+
+  <!-- 箭头 -->
+  <line x1="240" y1="320" x2="328" y2="200" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrn3)"/>
+  <text x="280" y="272" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#c0392b">操作指令</text>
+
+  <line x1="530" y1="200" x2="618" y2="320" stroke="#5a9e4f" stroke-width="3" marker-end="url(#arrn3)"/>
+  <line x1="500" y1="230" x2="190" y2="350" stroke="#5a9e4f" stroke-width="3" stroke-dasharray="6,4"/>
+  <text x="560" y="268" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#3a6e31">广播状态</text>
+  <text x="330" y="360" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#888">广播给视野内(AOI)客户端</text>
+
+  <!-- 优化 -->
+  <rect x="40" y="400" width="780" height="50" rx="8" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="430" y="424" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#8a6d1a">带宽优化：AOI 视野裁剪 · 频率分层 · 增量同步 · 数据压缩</text>
+</svg>

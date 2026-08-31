@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="420" viewBox="0 0 860 420">
+  <defs>
+    <marker id="arr12" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="420" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">GPU Instancing 原理对比</text>
+
+  <!-- 左边：无实例化 -->
+  <text x="215" y="80" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#c0392b">无 Instancing</text>
+  <rect x="40" y="100" width="350" height="230" rx="8" fill="#fdf4ec" stroke="#f0c8a5" stroke-width="1.5"/>
+  <text x="215" y="128" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#a05a20">1000 棵树 = 1000 次 Draw Call</text>
+
+  <g font-size="12" font-family="monospace" fill="#333">
+    <rect x="70" y="142" width="280" height="22" rx="4" fill="#fff" stroke="#f0c8a5"/>
+    <text x="85" y="157">Draw Call #1  (树)</text>
+    <rect x="70" y="168" width="280" height="22" rx="4" fill="#fff" stroke="#f0c8a5"/>
+    <text x="85" y="183">Draw Call #2  (树)</text>
+    <rect x="70" y="194" width="280" height="22" rx="4" fill="#fff" stroke="#f0c8a5"/>
+    <text x="85" y="209">Draw Call #3  (树)</text>
+    <text x="85" y="238">...</text>
+    <rect x="70" y="248" width="280" height="22" rx="4" fill="#fff" stroke="#f0c8a5"/>
+    <text x="85" y="263">Draw Call #1000 (树)</text>
+  </g>
+  <text x="215" y="308" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#c0392b">CPU 开销巨大 ✗</text>
+
+  <line x1="400" y1="220" x2="440" y2="220" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arr12)"/>
+
+  <!-- 右边：实例化 -->
+  <text x="640" y="80" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#3a6e31">GPU Instancing</text>
+  <rect x="452" y="100" width="370" height="230" rx="8" fill="#eef7ea" stroke="#bfe0b6" stroke-width="1.5"/>
+  <text x="637" y="128" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#3a6e31">1 次 Draw Call + 1 个实例缓冲</text>
+
+  <rect x="482" y="142" width="310" height="34" rx="6" fill="#fff" stroke="#5a9e4f" stroke-width="1.5"/>
+  <text x="637" y="163" text-anchor="middle" font-size="13" font-family="monospace" fill="#3a6e31">Draw Call #1（1000 instances）</text>
+
+  <!-- 实例缓冲 -->
+  <rect x="482" y="190" width="310" height="90" rx="6" fill="#f2faf0" stroke="#5a9e4f" stroke-width="1.5"/>
+  <text x="637" y="212" text-anchor="middle" font-size="12" font-family="sans-serif" font-weight="bold" fill="#3a6e31">实例数据 (ComputeBuffer)</text>
+  <text x="500" y="236" font-size="12" font-family="monospace" fill="#333">实例0: pos/scale/color</text>
+  <text x="500" y="256" font-size="12" font-family="monospace" fill="#333">实例1: pos/scale/color</text>
+  <text x="500" y="276" font-size="12" font-family="monospace" fill="#333">实例N: pos/scale/color</text>
+
+  <text x="637" y="310" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#3a6e31">GPU 顶点着色器按 SV_InstanceID 取数据 ✓</text>
+
+  <!-- 底部条件 -->
+  <rect x="40" y="355" width="780" height="50" rx="8" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="430" y="378" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#8a6d1a">条件</text>
+  <text x="430" y="397" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">同 Mesh + 同 Material + Shader 带 #pragma multi_compile_instancing</text>
+</svg>

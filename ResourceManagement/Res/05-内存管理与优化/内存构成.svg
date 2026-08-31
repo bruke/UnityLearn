@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="440" viewBox="0 0 860 440">
+  <rect width="860" height="440" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">Unity 内存构成</text>
+
+  <!-- 大框 -->
+  <rect x="60" y="60" width="740" height="170" rx="12" fill="#f7f7f7" stroke="#999" stroke-width="2"/>
+  <text x="430" y="90" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#333">应用总内存</text>
+
+  <!-- 托管内存 -->
+  <rect x="90" y="110" width="330" height="100" rx="10" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="255" y="138" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#3a6e31">托管内存 (GC)</text>
+  <text x="255" y="163" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">C# 对象 / GC 堆</text>
+  <text x="255" y="185" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">Mono 或 IL2CPP 管理</text>
+
+  <!-- 原生内存 -->
+  <rect x="440" y="110" width="330" height="100" rx="10" fill="#fdf4ec" stroke="#d9833a" stroke-width="2"/>
+  <text x="605" y="138" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#a05a20">原生内存 (Native)</text>
+  <text x="605" y="163" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">纹理 / 网格 / 音频数据</text>
+  <text x="605" y="185" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">AssetBundle 映射 / 引擎</text>
+
+  <!-- 常见问题 -->
+  <text x="430" y="270" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#333">三大常见内存问题</text>
+
+  <rect x="60" y="290" width="230" height="120" rx="10" fill="#fdf4ec" stroke="#f0c8a5" stroke-width="1.5"/>
+  <text x="175" y="318" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#c0392b">重复加载</text>
+  <text x="175" y="344" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">同一纹理被多个</text>
+  <text x="175" y="363" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Bundle 各自打包</text>
+  <text x="175" y="382" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">→ 内存翻倍</text>
+
+  <rect x="315" y="290" width="230" height="120" rx="10" fill="#eef4fd" stroke="#9db8dd" stroke-width="1.5"/>
+  <text x="430" y="318" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">资源泄漏</text>
+  <text x="430" y="344" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">加载后不 Unload</text>
+  <text x="430" y="363" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">引用丢失但</text>
+  <text x="430" y="382" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">原生内存未释放</text>
+
+  <rect x="570" y="290" width="230" height="120" rx="10" fill="#f4e6f7" stroke="#e0b9e5" stroke-width="1.5"/>
+  <text x="685" y="318" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#7a3d85">峰值过高</text>
+  <text x="685" y="344" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">一次性加载大量资源</text>
+  <text x="685" y="363" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">导致移动端 OOM</text>
+  <text x="685" y="382" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">（低内存机型）</text>
+
+  <!-- 优化 -->
+  <rect x="60" y="425" width="740" height="30" rx="6" fill="#fffbe6" stroke="#e0c060" stroke-width="1"/>
+  <text x="430" y="446" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#8a6d1a">工具：Window → Analysis → Memory Profiler · Profiler Memory 模块 · 移动端 Instruments/PerfDog</text>
+</svg>

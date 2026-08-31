@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="460" viewBox="0 0 860 460">
+  <defs>
+    <marker id="arrn7" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="460" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">延迟处理三大技术</text>
+
+  <!-- 三卡片 -->
+  <rect x="40" y="70" width="250" height="140" rx="10" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="165" y="100" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">预测</text>
+  <text x="165" y="130" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">本地玩家</text>
+  <text x="165" y="155" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">输入立即执行</text>
+  <text x="165" y="180" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">→ 零延迟感</text>
+
+  <rect x="305" y="70" width="250" height="140" rx="10" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="430" y="100" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#3a6e31">插值</text>
+  <text x="430" y="130" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">远程玩家</text>
+  <text x="430" y="155" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">状态平滑过渡</text>
+  <text x="430" y="180" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">→ 无跳跃</text>
+
+  <rect x="570" y="70" width="250" height="140" rx="10" fill="#fdf0e7" stroke="#d9833a" stroke-width="2"/>
+  <text x="695" y="100" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#a05a20">回滚</text>
+  <text x="695" y="130" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">不一致时</text>
+  <text x="695" y="155" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">回到服务器状态</text>
+  <text x="695" y="180" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">→ 修正错误</text>
+
+  <!-- 插值原理 -->
+  <text x="430" y="250" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#333">插值原理</text>
+  <line x1="120" y1="310" x2="740" y2="310" stroke="#333" stroke-width="2"/>
+  <circle cx="140" cy="310" r="6" fill="#4a6fa5"/>
+  <circle cx="360" cy="310" r="6" fill="#4a6fa5"/>
+  <circle cx="560" cy="310" r="6" fill="#4a6fa5"/>
+  <circle cx="730" cy="310" r="6" fill="#4a6fa5"/>
+  <text x="140" y="300" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#2b4a7a">t0 状态</text>
+  <text x="360" y="300" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#2b4a7a">t1 状态</text>
+  <text x="560" y="300" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#2b4a7a">t2 状态</text>
+  <text x="730" y="300" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#2b4a7a">t3 状态</text>
+  <text x="165" y="345" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Lerp 线性插值 → 平滑过渡</text>
+  <text x="430" y="375" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">延迟缓冲 100~200ms 吸收抖动</text>
+
+  <rect x="40" y="400" width="780" height="45" rx="8" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="430" y="425" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#8a6d1a">辅助：延迟补偿（命中判定用过去位置）· 服务器时间同步 · Slerp 朝向插值</text>
+</svg>

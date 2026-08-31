@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="440" viewBox="0 0 860 440">
+  <defs>
+    <marker id="arrn2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="440" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">TCP vs UDP 与传输层选型</text>
+
+  <!-- TCP -->
+  <rect x="40" y="70" width="370" height="200" rx="12" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="225" y="100" text-anchor="middle" font-size="16" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">TCP</text>
+  <text x="225" y="125" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">面向连接 · 可靠 · 有序</text>
+  <rect x="60" y="140" width="330" height="30" rx="6" fill="#fff" stroke="#4a6fa5" stroke-width="1.5"/>
+  <text x="225" y="160" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">三次握手 · 确认重传 · 流控</text>
+  <text x="70" y="195" font-size="12" font-family="sans-serif" fill="#333">+ 不丢包 · 有序</text>
+  <text x="70" y="218" font-size="12" font-family="sans-serif" fill="#333">- 延迟高 · 队头阻塞</text>
+  <text x="225" y="255" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">登录/聊天/交易/SLG</text>
+
+  <!-- UDP -->
+  <rect x="450" y="70" width="370" height="200" rx="12" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="635" y="100" text-anchor="middle" font-size="16" font-family="sans-serif" font-weight="bold" fill="#3a6e31">UDP</text>
+  <text x="635" y="125" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">无连接 · 不可靠 · 无序</text>
+  <rect x="470" y="140" width="330" height="30" rx="6" fill="#fff" stroke="#5a9e4f" stroke-width="1.5"/>
+  <text x="635" y="160" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">无握手 · 低延迟</text>
+  <text x="480" y="195" font-size="12" font-family="sans-serif" fill="#333">+ 延迟低 · 开销小</text>
+  <text x="480" y="218" font-size="12" font-family="sans-serif" fill="#333">- 丢包 · 乱序 · 需自处理</text>
+  <text x="635" y="255" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">战斗/位置/语音</text>
+
+  <!-- KCP -->
+  <rect x="40" y="300" width="780" height="120" rx="10" fill="#fffbe6" stroke="#e0c060" stroke-width="2"/>
+  <text x="430" y="330" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#8a6d1a">可靠 UDP：KCP</text>
+  <text x="430" y="358" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">在 UDP 上实现：序号(SN) · ACK 确认 · 快速重传 · 滑动窗口</text>
+  <text x="430" y="382" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">无队头阻塞 · 低延迟 · 适合实时战斗（MOBA/FPS）</text>
+  <text x="430" y="406" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">需自处理连接管理 · MTU 分片 · 会话超时</text>
+</svg>

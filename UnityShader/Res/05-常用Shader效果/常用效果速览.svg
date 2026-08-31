@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="420" viewBox="0 0 860 420">
+  <defs>
+    <marker id="arr5" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="420" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">常用 Shader 效果原理速览</text>
+
+  <!-- UV 滚动 -->
+  <rect x="30" y="60" width="250" height="160" rx="8" fill="#f4f8fd" stroke="#9db8dd" stroke-width="1.5"/>
+  <text x="155" y="90" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">① UV 滚动</text>
+  <rect x="60" y="110" width="80" height="60" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="1.5"/>
+  <line x1="60" y1="170" x2="140" y2="170" stroke="#2b4a7a" stroke-width="2" marker-end="url(#arr5)"/>
+  <line x1="140" y1="170" x2="140" y2="110" stroke="#2b4a7a" stroke-width="2" marker-end="url(#arr5)"/>
+  <text x="100" y="105" font-size="11" font-family="sans-serif" fill="#c0392b">U 方向滚动</text>
+  <text x="200" y="140" font-size="11" font-family="monospace" fill="#333">uv + _Flow * time</text>
+  <text x="200" y="160" font-size="11" font-family="monospace" fill="#333">uv2 = uv1 * 0.5</text>
+  <text x="200" y="180" font-size="11" font-family="monospace" fill="#333">（多层不同速度）</text>
+
+  <!-- 溶解 -->
+  <rect x="305" y="60" width="250" height="160" rx="8" fill="#fdf4ec" stroke="#f0c8a5" stroke-width="1.5"/>
+  <text x="430" y="90" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#a05a20">② 溶解 Dissolve</text>
+  <line x1="335" y1="150" x2="525" y2="150" stroke="#d9833a" stroke-width="2"/>
+  <text x="355" y="170" font-size="11" font-family="monospace" fill="#333">cutoff = noise - amount</text>
+  <text x="355" y="190" font-size="11" font-family="monospace" fill="#333">clip(cutoff) 丢弃暗部</text>
+  <rect x="335" y="112" width="40" height="38" fill="#d9833a" opacity="0.8"/>
+  <rect x="375" y="112" width="40" height="38" fill="#e8b98a"/>
+  <rect x="415" y="112" width="40" height="38" fill="#fdf0e7"/>
+  <text x="452" y="130" font-size="11" font-family="sans-serif" fill="#555">amount 增大 →</text>
+  <text x="452" y="146" font-size="11" font-family="sans-serif" fill="#555">亮部残留</text>
+
+  <!-- 描边 -->
+  <rect x="580" y="60" width="250" height="160" rx="8" fill="#eef7ea" stroke="#bfe0b6" stroke-width="1.5"/>
+  <text x="705" y="90" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#3a6e31">③ 描边 Outline</text>
+  <polygon points="660,200 705,120 750,200" fill="none" stroke="#5a9e4f" stroke-width="2"/>
+  <polygon points="655,205 705,115 755,205" fill="none" stroke="#c0392b" stroke-width="4"/>
+  <text x="610" y="120" font-size="11" font-family="monospace" fill="#333">pos += normal * w</text>
+  <text x="640" y="235" font-size="11" font-family="sans-serif" fill="#555">外扩 + Cull Front 稳定轮廓</text>
+
+  <!-- 序列帧 -->
+  <rect x="30" y="240" width="250" height="150" rx="8" fill="#f4e6f7" stroke="#e0b9e5" stroke-width="1.5"/>
+  <text x="155" y="270" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#7a3d85">④ 序列帧动画</text>
+  <rect x="60" y="290" width="90" height="70" fill="none" stroke="#a35fae" stroke-width="1.5"/>
+  <line x1="90" y1="290" x2="90" y2="360" stroke="#a35fae" stroke-width="1"/>
+  <line x1="120" y1="290" x2="120" y2="360" stroke="#a35fae" stroke-width="1"/>
+  <line x1="60" y1="315" x2="150" y2="315" stroke="#a35fae" stroke-width="1"/>
+  <line x1="60" y1="340" x2="150" y2="340" stroke="#a35fae" stroke-width="1"/>
+  <rect x="90" y="290" width="30" height="25" fill="#a35fae" opacity="0.4"/>
+  <text x="165" y="310" font-size="11" font-family="monospace" fill="#333">row = floor(time)</text>
+  <text x="165" y="330" font-size="11" font-family="monospace" fill="#333">col = floor(time/rows)</text>
+  <text x="165" y="350" font-size="11" font-family="monospace" fill="#333">% 行列数</text>
+
+  <!-- 透明混合 -->
+  <rect x="305" y="240" width="250" height="150" rx="8" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="430" y="270" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#8a6d1a">⑤ 透明混合</text>
+  <text x="335" y="300" font-size="12" font-family="monospace" fill="#333">AlphaBlend:  SrcAlpha OneMinusSrcAlpha</text>
+  <text x="335" y="325" font-size="12" font-family="monospace" fill="#333">Additive:     One One</text>
+  <text x="335" y="350" font-size="12" font-family="monospace" fill="#333">Cutout:       clip(a - _Cutoff)</text>
+  <rect x="460" y="295" width="60" height="55" fill="#e0c060" opacity="0.55"/>
+
+  <!-- 植物摆动 -->
+  <rect x="580" y="240" width="250" height="150" rx="8" fill="#f2faf0" stroke="#bfe0b6" stroke-width="1.5"/>
+  <text x="705" y="270" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#3a6e31">⑥ 植物摆动</text>
+  <line x1="680" y1="380" x2="700" y2="280" stroke="#5a9e4f" stroke-width="3"/>
+  <line x1="720" y1="380" x2="712" y2="300" stroke="#5a9e4f" stroke-width="3"/>
+  <line x1="740" y1="380" x2="740" y2="310" stroke="#5a9e4f" stroke-width="3"/>
+  <line x1="700" y1="280" x2="715" y2="265" stroke="#c0392b" stroke-width="1.5" marker-end="url(#arr5)"/>
+  <text x="770" y="330" font-size="11" font-family="monospace" fill="#333">x += sin(time+pos)</text>
+  <text x="770" y="350" font-size="11" font-family="monospace" fill="#333">  × uv.y(高度权重)</text>
+</svg>

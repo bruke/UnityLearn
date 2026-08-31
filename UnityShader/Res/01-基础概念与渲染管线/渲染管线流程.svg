@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="520" viewBox="0 0 840 520">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+    <marker id="arrd" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#999"/></marker>
+  </defs>
+  <rect width="840" height="520" fill="#ffffff"/>
+  <text x="420" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">Unity 渲染管线流程</text>
+
+  <!-- 三阶段主体 -->
+  <rect x="20" y="60" width="250" height="60" rx="10" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="145" y="86" text-anchor="middle" font-size="16" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">应用阶段 (CPU)</text>
+  <text x="145" y="106" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4a6fa5">准备数据 / 剔除 / 发起 Draw Call</text>
+
+  <rect x="300" y="60" width="250" height="60" rx="10" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="425" y="86" text-anchor="middle" font-size="16" font-family="sans-serif" font-weight="bold" fill="#3a6e31">几何阶段 (GPU)</text>
+  <text x="425" y="106" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#5a9e4f">顶点处理 / 裁剪 / 屏幕映射</text>
+
+  <rect x="580" y="60" width="240" height="60" rx="10" fill="#fdf0e7" stroke="#d9833a" stroke-width="2"/>
+  <text x="700" y="86" text-anchor="middle" font-size="16" font-family="sans-serif" font-weight="bold" fill="#a05a20">光栅化阶段 (GPU)</text>
+  <text x="700" y="106" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#d9833a">生成片元 / 着色 / 深度混合</text>
+
+  <line x1="270" y1="90" x2="298" y2="90" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="550" y1="90" x2="578" y2="90" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- 应用阶段细节 -->
+  <text x="145" y="160" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#333">应用阶段细节</text>
+  <rect x="40" y="175" width="210" height="34" rx="6" fill="#f4f8fd" stroke="#b9cde6" stroke-width="1"/>
+  <text x="145" y="197" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#333">1. 渲染数据准备（Mesh/材质/纹理）</text>
+  <rect x="40" y="215" width="210" height="34" rx="6" fill="#f4f8fd" stroke="#b9cde6" stroke-width="1"/>
+  <text x="145" y="237" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#333">2. 视锥剔除 Frustum Culling</text>
+  <rect x="40" y="255" width="210" height="34" rx="6" fill="#f4f8fd" stroke="#b9cde6" stroke-width="1"/>
+  <text x="145" y="277" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#333">3. 设置渲染状态</text>
+  <rect x="40" y="295" width="210" height="34" rx="6" fill="#f4f8fd" stroke="#b9cde6" stroke-width="1"/>
+  <text x="145" y="317" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#333">4. 发起 Draw Call</text>
+
+  <!-- 几何阶段细节 -->
+  <text x="425" y="160" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#333">几何阶段细节</text>
+  <rect x="320" y="175" width="210" height="34" rx="6" fill="#f2faf0" stroke="#bfe0b6" stroke-width="1"/>
+  <text x="425" y="197" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#333">顶点着色器 (MVP 变换)</text>
+  <line x1="425" y1="209" x2="425" y2="215" stroke="#999" stroke-width="2" marker-end="url(#arrd)"/>
+  <rect x="320" y="215" width="210" height="34" rx="6" fill="#f2faf0" stroke="#bfe0b6" stroke-width="1"/>
+  <text x="425" y="237" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#333">曲面细分 / 几何着色器（可选）</text>
+  <line x1="425" y1="249" x2="425" y2="255" stroke="#999" stroke-width="2" marker-end="url(#arrd)"/>
+  <rect x="320" y="255" width="210" height="34" rx="6" fill="#f2faf0" stroke="#bfe0b6" stroke-width="1"/>
+  <text x="425" y="277" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#333">裁剪（视锥外图元剔除）</text>
+  <line x1="425" y1="289" x2="425" y2="295" stroke="#999" stroke-width="2" marker-end="url(#arrd)"/>
+  <rect x="320" y="295" width="210" height="34" rx="6" fill="#f2faf0" stroke="#bfe0b6" stroke-width="1"/>
+  <text x="425" y="317" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#333">屏幕映射（视口变换）</text>
+
+  <!-- 光栅化细节 -->
+  <text x="700" y="160" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#333">光栅化阶段细节</text>
+  <rect x="600" y="175" width="200" height="34" rx="6" fill="#fdf4ec" stroke="#f0c8a5" stroke-width="1"/>
+  <text x="700" y="197" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#333">三角形设置 / 遍历</text>
+  <line x1="700" y1="209" x2="700" y2="215" stroke="#999" stroke-width="2" marker-end="url(#arrd)"/>
+  <rect x="600" y="215" width="200" height="34" rx="6" fill="#fdf4ec" stroke="#f0c8a5" stroke-width="1"/>
+  <text x="700" y="237" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#333">片元着色器（像素着色）</text>
+  <line x1="700" y1="249" x2="700" y2="255" stroke="#999" stroke-width="2" marker-end="url(#arrd)"/>
+  <rect x="600" y="255" width="200" height="34" rx="6" fill="#fdf4ec" stroke="#f0c8a5" stroke-width="1"/>
+  <text x="700" y="277" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#333">深度测试 / 模板测试</text>
+  <line x1="700" y1="289" x2="700" y2="295" stroke="#999" stroke-width="2" marker-end="url(#arrd)"/>
+  <rect x="600" y="295" width="200" height="34" rx="6" fill="#fdf4ec" stroke="#f0c8a5" stroke-width="1"/>
+  <text x="700" y="317" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#333">颜色混合 Blend → 输出</text>
+
+  <!-- 底部流程 -->
+  <line x1="700" y1="345" x2="700" y2="380" stroke="#999" stroke-width="2" stroke-dasharray="4,3"/>
+  <rect x="540" y="385" width="320" height="44" rx="10" fill="#fff5f0" stroke="#e06666" stroke-width="2"/>
+  <text x="700" y="413" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#c0392b">输出：后处理 → 帧缓冲 → 显示器</text>
+  <line x1="700" y1="380" x2="700" y2="383" stroke="#999" stroke-width="2" marker-end="url(#arrd)"/>
+</svg>

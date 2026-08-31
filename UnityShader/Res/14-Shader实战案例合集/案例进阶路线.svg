@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="520" viewBox="0 0 860 520">
+  <defs>
+    <marker id="arr14" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="520" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">实战案例进阶路线</text>
+
+  <!-- 初级 -->
+  <rect x="40" y="80" width="760" height="120" rx="12" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="420" y="108" text-anchor="middle" font-size="16" font-family="sans-serif" font-weight="bold" fill="#3a6e31">初级 · 基础语法与常用效果</text>
+  <rect x="70" y="125" width="160" height="55" rx="8" fill="#fff" stroke="#5a9e4f" stroke-width="1.5"/>
+  <text x="150" y="148" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#3a6e31">案例1 发光溶解</text>
+  <text x="150" y="168" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">clip + 噪声</text>
+  <rect x="250" y="125" width="160" height="55" rx="8" fill="#fff" stroke="#5a9e4f" stroke-width="1.5"/>
+  <text x="330" y="148" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#3a6e31">案例2 UV流动水面</text>
+  <text x="330" y="168" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">UV动画+法线</text>
+  <rect x="430" y="125" width="160" height="55" rx="8" fill="#fff" stroke="#5a9e4f" stroke-width="1.5"/>
+  <text x="510" y="148" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#3a6e31">案例3 双面植被</text>
+  <text x="510" y="168" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Cull Off+摆动</text>
+  <rect x="610" y="125" width="160" height="55" rx="8" fill="#fff" stroke="#5a9e4f" stroke-width="1.5"/>
+  <text x="690" y="148" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#999">前置：第 2~5 章</text>
+
+  <line x1="420" y1="200" x2="420" y2="228" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arr14)"/>
+
+  <!-- 中级 -->
+  <rect x="40" y="232" width="760" height="120" rx="12" fill="#fdf4ec" stroke="#d9833a" stroke-width="2"/>
+  <text x="420" y="260" text-anchor="middle" font-size="16" font-family="sans-serif" font-weight="bold" fill="#a05a20">中级 · 风格化与光照技术</text>
+  <rect x="70" y="277" width="160" height="55" rx="8" fill="#fff" stroke="#d9833a" stroke-width="1.5"/>
+  <text x="150" y="300" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#a05a20">案例4 MatCap金属球</text>
+  <text x="150" y="320" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">法线映射采样</text>
+  <rect x="250" y="277" width="160" height="55" rx="8" fill="#fff" stroke="#d9833a" stroke-width="1.5"/>
+  <text x="330" y="300" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#a05a20">案例5 卡通角色</text>
+  <text x="330" y="320" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Ramp+描边+边缘光</text>
+  <rect x="430" y="277" width="160" height="55" rx="8" fill="#fff" stroke="#d9833a" stroke-width="1.5"/>
+  <text x="510" y="300" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#a05a20">案例6 后处理描边</text>
+  <text x="510" y="320" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Sobel+Feature</text>
+  <rect x="610" y="277" width="160" height="55" rx="8" fill="#fff" stroke="#d9833a" stroke-width="1.5"/>
+  <text x="690" y="300" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#a05a20">案例7 Gerstner水面</text>
+  <text x="690" y="320" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">多波叠加+法线重建</text>
+
+  <line x1="420" y1="352" x2="420" y2="380" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arr14)"/>
+
+  <!-- 高级 -->
+  <rect x="40" y="384" width="760" height="120" rx="12" fill="#f4e6f7" stroke="#a35fae" stroke-width="2"/>
+  <text x="420" y="412" text-anchor="middle" font-size="16" font-family="sans-serif" font-weight="bold" fill="#7a3d85">高级 · GPU 与程序化渲染</text>
+  <rect x="70" y="429" width="160" height="55" rx="8" fill="#fff" stroke="#a35fae" stroke-width="1.5"/>
+  <text x="150" y="452" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#7a3d85">案例8 GPU粒子</text>
+  <text x="150" y="472" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Compute+Buffer</text>
+  <rect x="250" y="429" width="160" height="55" rx="8" fill="#fff" stroke="#a35fae" stroke-width="1.5"/>
+  <text x="330" y="452" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#7a3d85">案例9 程序化地形</text>
+  <text x="330" y="472" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">FBM+顶点位移</text>
+  <rect x="430" y="429" width="160" height="55" rx="8" fill="#fff" stroke="#a35fae" stroke-width="1.5"/>
+  <text x="510" y="452" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#7a3d85">案例10 体积云雾</text>
+  <text x="510" y="472" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Ray Marching</text>
+  <rect x="610" y="429" width="160" height="55" rx="8" fill="#fff" stroke="#a35fae" stroke-width="1.5"/>
+  <text x="690" y="452" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#7a3d85">案例11 百万森林</text>
+  <text x="690" y="472" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Instancing+Indirect</text>
+</svg>

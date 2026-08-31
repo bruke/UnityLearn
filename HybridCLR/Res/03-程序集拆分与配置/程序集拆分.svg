@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="460" viewBox="0 0 860 460">
+  <defs>
+    <marker id="arrhc3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#c0392b"/></marker>
+  </defs>
+  <rect width="860" height="460" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">程序集拆分与依赖方向</text>
+
+  <!-- 左侧 AOT -->
+  <rect x="40" y="80" width="360" height="280" rx="12" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="220" y="110" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">AOT 程序集（随包）</text>
+  <rect x="60" y="130" width="320" height="40" rx="8" fill="#fff" stroke="#4a6fa5" stroke-width="1.5"/>
+  <text x="220" y="155" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#2b4a7a">AOTFramework（基础框架）</text>
+  <rect x="60" y="180" width="320" height="40" rx="8" fill="#fff" stroke="#4a6fa5" stroke-width="1.5"/>
+  <text x="220" y="205" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#2b4a7a">AOTInterface（接口定义）</text>
+  <rect x="60" y="230" width="320" height="40" rx="8" fill="#fff" stroke="#4a6fa5" stroke-width="1.5"/>
+  <text x="220" y="255" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#2b4a7a">Adapters（跨域适配器）</text>
+  <text x="220" y="310" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">引擎层 · 原生二进制 · 不可热更</text>
+
+  <!-- 右侧热更 -->
+  <rect x="470" y="80" width="350" height="280" rx="12" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="645" y="110" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#3a6e31">热更程序集（可更新）</text>
+  <rect x="490" y="130" width="310" height="40" rx="8" fill="#fff" stroke="#5a9e4f" stroke-width="1.5"/>
+  <text x="645" y="155" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#3a6e31">HotFix（入口 + 生命周期）</text>
+  <rect x="490" y="180" width="310" height="40" rx="8" fill="#fff" stroke="#5a9e4f" stroke-width="1.5"/>
+  <text x="645" y="205" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#3a6e31">GameLogic（玩法逻辑）</text>
+  <rect x="490" y="230" width="310" height="40" rx="8" fill="#fff" stroke="#5a9e4f" stroke-width="1.5"/>
+  <text x="645" y="255" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#3a6e31">UI / Data（UI 与数据）</text>
+  <text x="645" y="310" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">DLL(IL) · 下载加载 · 可热更</text>
+
+  <!-- 依赖方向箭头 -->
+  <line x1="400" y1="190" x2="468" y2="190" stroke="#c0392b" stroke-width="3.5" marker-end="url(#arrhc3)"/>
+  <line x1="468" y1="220" x2="400" y2="220" stroke="#a0a0a0" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#arrhc3)"/>
+  <text x="434" y="160" text-anchor="middle" font-size="12" font-family="sans-serif" font-weight="bold" fill="#c0392b">引用</text>
+  <text x="434" y="258" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#999">接口/反射</text>
+
+  <!-- 规则说明 -->
+  <rect x="40" y="390" width="780" height="50" rx="8" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="430" y="415" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#8a6d1a">依赖方向约束</text>
+  <text x="430" y="434" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">✓ 热更 → AOT（直接引用）  ✗ AOT → 热更（禁止，用接口/委托/反射反向调用）</text>
+</svg>

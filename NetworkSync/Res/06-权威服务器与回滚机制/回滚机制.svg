@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="440" viewBox="0 0 860 440">
+  <defs>
+    <marker id="arrn6" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="440" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">权威服务器与回滚机制</text>
+
+  <!-- 客户端预测 -->
+  <rect x="40" y="70" width="380" height="140" rx="12" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="230" y="100" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">客户端预测（本地立即执行）</text>
+  <text x="230" y="130" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">输入 → 立即本地移动（预测状态）</text>
+  <text x="230" y="155" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">同时发送给服务器</text>
+  <text x="230" y="180" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">→ 玩家操作零延迟感</text>
+
+  <!-- 服务器权威 -->
+  <rect x="440" y="70" width="380" height="140" rx="12" fill="#fdf0e7" stroke="#d9833a" stroke-width="2"/>
+  <text x="630" y="100" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#a05a20">服务器权威（最终真相）</text>
+  <text x="630" y="130" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">服务器计算最终状态</text>
+  <text x="630" y="155" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">校验客户端输入是否合法</text>
+  <text x="630" y="180" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">→ 防作弊 · 公平</text>
+
+  <!-- 箭头 -->
+  <line x1="420" y1="130" x2="438" y2="130" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrn6)"/>
+  <line x1="438" y1="150" x2="420" y2="150" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrn6)"/>
+
+  <!-- 回滚 -->
+  <rect x="40" y="240" width="780" height="100" rx="12" fill="#f4e6f7" stroke="#a35fae" stroke-width="2"/>
+  <text x="430" y="270" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#7a3d85">回滚（Rollback）</text>
+  <text x="430" y="298" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">预测结果 ≠ 服务器结果 → 回滚到上次确认帧 → 用正确输入重跑</text>
+  <text x="430" y="322" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">需要：状态快照 · 随机状态恢复 · 逻辑确定性</text>
+
+  <!-- 快照 -->
+  <rect x="40" y="370" width="380" height="55" rx="8" fill="#eef7ea" stroke="#bfe0b6" stroke-width="1.5"/>
+  <text x="230" y="395" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#3a6e31">每帧保存状态快照（用于回滚）</text>
+
+  <rect x="440" y="370" width="380" height="55" rx="8" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="630" y="395" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#8a6d1a">GGPO 回滚联网 · FPS 延迟补偿 · 格斗游戏</text>
+</svg>

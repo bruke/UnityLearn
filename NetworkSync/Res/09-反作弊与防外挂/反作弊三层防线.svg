@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="440" viewBox="0 0 860 440">
+  <defs>
+    <marker id="arrn9" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="440" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">反作弊三层防线</text>
+
+  <!-- 三层 -->
+  <rect x="40" y="70" width="250" height="150" rx="12" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="165" y="100" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#3a6e31">第 1 层</text>
+  <text x="165" y="128" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#3a6e31">服务器权威</text>
+  <text x="165" y="158" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">移动/伤害/掉落</text>
+  <text x="165" y="180" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">服务器计算校验</text>
+  <text x="165" y="205" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">（防一切）</text>
+
+  <rect x="305" y="70" width="250" height="150" rx="12" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="430" y="100" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">第 2 层</text>
+  <text x="430" y="128" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">协议安全</text>
+  <text x="430" y="158" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">传输加密(AES)</text>
+  <text x="430" y="180" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">消息签名(HMAC)</text>
+  <text x="430" y="205" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">（防抓包/篡改）</text>
+
+  <rect x="570" y="70" width="250" height="150" rx="12" fill="#fdf4ec" stroke="#d9833a" stroke-width="2"/>
+  <text x="695" y="100" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#a05a20">第 3 层</text>
+  <text x="695" y="128" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#a05a20">客户端保护</text>
+  <text x="695" y="158" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">内存加密</text>
+  <text x="695" y="180" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">代码混淆/反调试</text>
+  <text x="695" y="205" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">（防内存修改）</text>
+
+  <!-- 服务器校验 -->
+  <rect x="40" y="250" width="380" height="100" rx="10" fill="#f4f8fd" stroke="#9db8dd" stroke-width="1.5"/>
+  <text x="230" y="278" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">服务器校验示例</text>
+  <text x="60" y="306" font-size="11" font-family="monospace" fill="#333">移动: 上报位置 vs 计算位移, 超限→瞬移</text>
+  <text x="60" y="330" font-size="11" font-family="monospace" fill="#333">伤害: 上报伤害 vs 服务器重算, 不符→外挂</text>
+
+  <!-- 行为检测 -->
+  <rect x="440" y="250" width="380" height="100" rx="10" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="630" y="278" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#8a6d1a">行为检测</text>
+  <text x="460" y="306" font-size="11" font-family="sans-serif" fill="#333">规则检测：速度/频率/CD 超限</text>
+  <text x="460" y="330" font-size="11" font-family="sans-serif" fill="#333">统计检测：命中率/反应时间/操作规律</text>
+
+  <!-- 处理流程 -->
+  <rect x="40" y="375" width="780" height="50" rx="8" fill="#eef7ea" stroke="#bfe0b6" stroke-width="1.5"/>
+  <text x="430" y="400" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#3a6e31">处理流程：记录日志 → 上报审核 → 临时限制 → 确认封号</text>
+  <text x="430" y="420" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">注意：避免误封 · 保留证据 · 平衡安全与体验</text>
+</svg>

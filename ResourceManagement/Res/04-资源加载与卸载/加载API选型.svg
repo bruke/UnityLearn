@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="440" viewBox="0 0 860 440">
+  <defs>
+    <marker id="arrm4" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="440" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">加载 API 选型</text>
+
+  <!-- 选择流程 -->
+  <text x="430" y="80" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#333">按场景选择加载方式</text>
+
+  <rect x="40" y="100" width="760" height="90" rx="10" fill="#f7f7f7" stroke="#ddd" stroke-width="1.5"/>
+  <text x="100" y="125" font-size="13" font-family="sans-serif" font-weight="bold" fill="#333">是本地资源？</text>
+  <text x="360" y="125" font-size="13" font-family="sans-serif" fill="#555">────────────────────────────</text>
+  <text x="520" y="125" font-size="13" font-family="sans-serif" font-weight="bold" fill="#333">否 → 远程下载</text>
+  <text x="620" y="155" font-size="12" font-family="sans-serif" fill="#c0392b">UnityWebRequest / Addressables 远程</text>
+  <text x="100" y="155" font-size="12" font-family="sans-serif" fill="#3a6e31">→ 大项目用 Addressables（推荐）</text>
+  <text x="100" y="175" font-size="12" font-family="sans-serif" fill="#3a6e31">→ 小项目/原型用 Resources</text>
+
+  <!-- 表格 -->
+  <text x="430" y="220" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#333">对比总表</text>
+
+  <rect x="40" y="235" width="780" height="35" rx="4" fill="#eaf1fa" stroke="#9db8dd" stroke-width="1.5"/>
+  <text x="130" y="258" text-anchor="middle" font-size="12" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">API</text>
+  <text x="300" y="258" text-anchor="middle" font-size="12" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">同步/异步</text>
+  <text x="470" y="258" text-anchor="middle" font-size="12" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">适用</text>
+  <text x="700" y="258" text-anchor="middle" font-size="12" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">释放</text>
+
+  <g font-size="12" font-family="sans-serif" fill="#333">
+    <rect x="40" y="272" width="780" height="30" fill="#f4f8fd"/>
+    <text x="130" y="292" text-anchor="middle">Resources.Load</text><text x="300" y="292" text-anchor="middle">同步</text><text x="470" y="292" text-anchor="middle">原型/小项目</text><text x="700" y="292" text-anchor="middle">UnloadAsset</text>
+    <rect x="40" y="304" width="780" height="30" fill="#fff"/>
+    <text x="130" y="324" text-anchor="middle">LoadFromFileAsync</text><text x="300" y="324" text-anchor="middle">异步</text><text x="470" y="324" text-anchor="middle">本地 AB（推荐）</text><text x="700" y="324" text-anchor="middle">Unload</text>
+    <rect x="40" y="336" width="780" height="30" fill="#f4f8fd"/>
+    <text x="130" y="356" text-anchor="middle">UnityWebRequest</text><text x="300" y="356" text-anchor="middle">异步</text><text x="470" y="356" text-anchor="middle">远程下载</text><text x="700" y="356" text-anchor="middle">Unload</text>
+    <rect x="40" y="368" width="780" height="30" fill="#fff"/>
+    <text x="130" y="388" text-anchor="middle">Addressables</text><text x="300" y="388" text-anchor="middle">异步</text><text x="470" y="388" text-anchor="middle">现代推荐方案</text><text x="700" y="388" text-anchor="middle">Release</text>
+  </g>
+
+  <rect x="40" y="402" width="780" height="30" rx="6" fill="#fffbe6" stroke="#e0c060" stroke-width="1"/>
+  <text x="430" y="423" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#8a6d1a">建议：本地用 LoadFromFileAsync，远程用 Addressables，两者都会自动管理依赖</text>
+</svg>

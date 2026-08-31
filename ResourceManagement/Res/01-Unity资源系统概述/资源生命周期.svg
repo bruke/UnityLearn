@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="400" viewBox="0 0 860 400">
+  <defs>
+    <marker id="arrm1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="400" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">资源生命周期</text>
+
+  <!-- 生命周期流程 -->
+  <rect x="40" y="80" width="150" height="70" rx="10" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="115" y="112" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">加载</text>
+  <text x="115" y="134" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#4a6fa5">LoadAsset</text>
+  <line x1="190" y1="115" x2="218" y2="115" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrm1)"/>
+
+  <rect x="220" y="80" width="150" height="70" rx="10" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="295" y="112" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#3a6e31">实例化</text>
+  <text x="295" y="134" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#5a9e4f">Instantiate</text>
+  <line x1="370" y1="115" x2="398" y2="115" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrm1)"/>
+
+  <rect x="400" y="80" width="150" height="70" rx="10" fill="#fdf0e7" stroke="#d9833a" stroke-width="2"/>
+  <text x="475" y="112" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#a05a20">使用</text>
+  <text x="475" y="134" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#d9833a">游戏逻辑</text>
+  <line x1="550" y1="115" x2="578" y2="115" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrm1)"/>
+
+  <rect x="580" y="80" width="150" height="70" rx="10" fill="#f4e6f7" stroke="#a35fae" stroke-width="2"/>
+  <text x="655" y="112" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#7a3d85">卸载</text>
+  <text x="655" y="134" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#a35fae">Unload</text>
+  <line x1="730" y1="115" x2="758" y2="115" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrm1)"/>
+
+  <rect x="760" y="80" width="80" height="70" rx="10" fill="#e8f8f2" stroke="#2a9d74" stroke-width="2"/>
+  <text x="800" y="112" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#1d6f50">释放</text>
+  <text x="800" y="134" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#2a9d74">Release</text>
+
+  <!-- 内存区分 -->
+  <text x="430" y="210" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#333">两种内存</text>
+
+  <rect x="40" y="230" width="390" height="140" rx="10" fill="#f4f8fd" stroke="#9db8dd" stroke-width="2"/>
+  <text x="235" y="260" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">托管内存（Managed）</text>
+  <text x="235" y="285" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">C# 对象：GameObject、MonoBehaviour</text>
+  <text x="235" y="307" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">由 GC 自动回收</text>
+  <text x="235" y="329" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">需避免每帧分配（GC Alloc）</text>
+
+  <rect x="450" y="230" width="390" height="140" rx="10" fill="#fdf4ec" stroke="#f0c8a5" stroke-width="2"/>
+  <text x="645" y="260" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#a05a20">原生内存（Native）</text>
+  <text x="645" y="285" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">纹理像素 / 网格顶点 / 音频数据</text>
+  <text x="645" y="307" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">不经 GC，需手动释放</text>
+  <text x="645" y="329" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#555">AssetBundle.Unload / Resources.UnloadAsset</text>
+</svg>

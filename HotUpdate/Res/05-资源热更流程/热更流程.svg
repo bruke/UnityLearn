@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="480" viewBox="0 0 860 480">
+  <defs>
+    <marker id="arrh5" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a6fa5"/></marker>
+  </defs>
+  <rect width="860" height="480" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">资源热更流程</text>
+
+  <!-- 六步流程 -->
+  <rect x="40" y="70" width="120" height="60" rx="10" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="100" y="98" text-anchor="middle" font-size="12" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">获取版本</text>
+  <text x="100" y="118" text-anchor="middle" font-size="10" font-family="sans-serif" fill="#4a6fa5">version.json</text>
+  <line x1="160" y1="100" x2="188" y2="100" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrh5)"/>
+
+  <rect x="190" y="70" width="120" height="60" rx="10" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
+  <text x="250" y="98" text-anchor="middle" font-size="12" font-family="sans-serif" font-weight="bold" fill="#3a6e31">版本比对</text>
+  <text x="250" y="118" text-anchor="middle" font-size="10" font-family="sans-serif" fill="#5a9e4f">Hash 差异</text>
+  <line x1="310" y1="100" x2="338" y2="100" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrh5)"/>
+
+  <rect x="340" y="70" width="120" height="60" rx="10" fill="#fdf0e7" stroke="#d9833a" stroke-width="2"/>
+  <text x="400" y="98" text-anchor="middle" font-size="12" font-family="sans-serif" font-weight="bold" fill="#a05a20">下载差异</text>
+  <text x="400" y="118" text-anchor="middle" font-size="10" font-family="sans-serif" fill="#d9833a">增量文件</text>
+  <line x1="460" y1="100" x2="488" y2="100" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrh5)"/>
+
+  <rect x="490" y="70" width="120" height="60" rx="10" fill="#f4e6f7" stroke="#a35fae" stroke-width="2"/>
+  <text x="550" y="98" text-anchor="middle" font-size="12" font-family="sans-serif" font-weight="bold" fill="#7a3d85">完整性校验</text>
+  <text x="550" y="118" text-anchor="middle" font-size="10" font-family="sans-serif" fill="#a35fae">CRC / MD5</text>
+  <line x1="610" y1="100" x2="638" y2="100" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrh5)"/>
+
+  <rect x="640" y="70" width="120" height="60" rx="10" fill="#e8f8f2" stroke="#2a9d74" stroke-width="2"/>
+  <text x="700" y="98" text-anchor="middle" font-size="12" font-family="sans-serif" font-weight="bold" fill="#1d6f50">应用替换</text>
+  <text x="700" y="118" text-anchor="middle" font-size="10" font-family="sans-serif" fill="#2a9d74">解压/替换</text>
+  <line x1="760" y1="100" x2="788" y2="100" stroke="#4a6fa5" stroke-width="3" marker-end="url(#arrh5)"/>
+
+  <rect x="790" y="70" width="60" height="60" rx="10" fill="#fffbe6" stroke="#e0c060" stroke-width="2"/>
+  <text x="820" y="98" text-anchor="middle" font-size="11" font-family="sans-serif" font-weight="bold" fill="#8a6d1a">重启</text>
+  <text x="820" y="116" text-anchor="middle" font-size="10" font-family="sans-serif" fill="#8a6d1a">生效</text>
+
+  <!-- 分支 -->
+  <rect x="40" y="170" width="780" height="70" rx="10" fill="#f7f7f7" stroke="#ddd" stroke-width="1.5"/>
+  <text x="100" y="198" font-size="13" font-family="sans-serif" font-weight="bold" fill="#333">有更新？</text>
+  <text x="430" y="198" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#555">────────────────────────────────</text>
+  <text x="620" y="198" font-size="13" font-family="sans-serif" font-weight="bold" fill="#3a6e31">无更新 → 直接启动</text>
+  <text x="100" y="224" font-size="12" font-family="sans-serif" fill="#c0392b">是 → 走上方下载流程（支持断点续传）</text>
+
+  <!-- 关键机制 -->
+  <text x="430" y="275" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#333">关键实现机制</text>
+
+  <rect x="40" y="290" width="250" height="100" rx="8" fill="#eef7ea" stroke="#bfe0b6" stroke-width="1.5"/>
+  <text x="165" y="318" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#3a6e31">断点续传</text>
+  <text x="165" y="344" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">Range 请求头</text>
+  <text x="165" y="363" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">从已下载字节续传</text>
+
+  <rect x="305" y="290" width="250" height="100" rx="8" fill="#fdf4ec" stroke="#f0c8a5" stroke-width="1.5"/>
+  <text x="430" y="318" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#a05a20">分段下载</text>
+  <text x="430" y="344" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">最小可玩 → 核心 → 高清</text>
+  <text x="430" y="363" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">低优先级后台下载</text>
+
+  <rect x="570" y="290" width="250" height="100" rx="8" fill="#f4e6f7" stroke="#e0b9e5" stroke-width="1.5"/>
+  <text x="695" y="318" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#7a3d85">版本管理</text>
+  <text x="695" y="344" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">主.次.资源.补丁</text>
+  <text x="695" y="363" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#555">灰度发布 + 强制更新</text>
+
+  <!-- 目录 -->
+  <rect x="40" y="405" width="780" height="60" rx="8" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
+  <text x="430" y="430" text-anchor="middle" font-size="12" font-family="sans-serif" font-weight="bold" fill="#8a6d1a">服务器目录</text>
+  <text x="430" y="452" text-anchor="middle" font-size="11" font-family="monospace" fill="#333">CDN/版本号/bundles/ + patches/ + scripts/ + version.json</text>
+</svg>
