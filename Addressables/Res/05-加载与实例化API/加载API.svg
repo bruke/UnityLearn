@@ -1,28 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="400" viewBox="0 0 860 400">
   <rect width="860" height="400" fill="#ffffff"/>
-  <text x="430" y="32" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">?????? API</text>
+  <text x="430" y="32" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">加载与实例化 API</text>
 
   <rect x="30" y="60" width="190" height="100" rx="10" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
   <text x="125" y="100" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">LoadAssetAsync</text>
-  <text x="125" y="128" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4a6fa5">????? Instantiate</text>
+  <text x="125" y="128" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4a6fa5">拿到资产后自行实例化</text>
 
   <rect x="235" y="60" width="190" height="100" rx="10" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
   <text x="330" y="100" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#3a6e31">InstantiateAsync</text>
-  <text x="330" y="128" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#5a9e4f">??????</text>
+  <text x="330" y="128" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#5a9e4f">直接生成场景实例</text>
 
   <rect x="440" y="60" width="190" height="100" rx="10" fill="#fdf0e7" stroke="#d9833a" stroke-width="2"/>
   <text x="535" y="100" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#a05a20">LoadSceneAsync</text>
-  <text x="535" y="128" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#d9833a">?? + ??</text>
+  <text x="535" y="128" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#d9833a">场景连同依赖一起加载</text>
 
   <rect x="645" y="60" width="185" height="100" rx="10" fill="#f4e6f7" stroke="#a35fae" stroke-width="2"/>
   <text x="737" y="100" text-anchor="middle" font-size="13" font-family="sans-serif" font-weight="bold" fill="#7a3d85">LoadAssetsAsync</text>
-  <text x="737" y="128" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#a35fae">Label / ??</text>
+  <text x="737" y="128" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#a35fae">按 Label 批量加载</text>
 
   <rect x="30" y="190" width="800" height="80" rx="10" fill="#f4f8fd" stroke="#9db8dd" stroke-width="1.5"/>
-  <text x="430" y="225" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#333">?? Status??? Result ? ??? OperationException</text>
-  <text x="430" y="250" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#666">?????? DownloadDependencies?? Load</text>
+  <text x="430" y="225" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#333">先看 Status 再取 Result，失败时读 OperationException</text>
+  <text x="430" y="250" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#666">远程大资源先 DownloadDependencies，再执行加载</text>
 
   <rect x="30" y="290" width="800" height="80" rx="10" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
-  <text x="430" y="325" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#8a6d1a">Load ?? Release(handle)</text>
-  <text x="430" y="350" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#8a6d1a">InstantiateAsync ?? ReleaseInstance</text>
+  <text x="430" y="325" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#8a6d1a">LoadAssetAsync 对应 Release(handle)</text>
+  <text x="430" y="350" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#8a6d1a">InstantiateAsync 对应 ReleaseInstance</text>
 </svg>

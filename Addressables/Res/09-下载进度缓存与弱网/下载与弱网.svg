@@ -1,24 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="400" viewBox="0 0 860 400">
   <rect width="860" height="400" fill="#ffffff"/>
-  <text x="430" y="32" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">??????????</text>
+  <text x="430" y="32" text-anchor="middle" font-size="20" font-family="sans-serif" font-weight="bold" fill="#333">下载进度、缓存与弱网</text>
 
   <rect x="40" y="60" width="240" height="100" rx="10" fill="#eaf1fa" stroke="#4a6fa5" stroke-width="2"/>
-  <text x="160" y="100" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">? GetDownloadSize</text>
-  <text x="160" y="128" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4a6fa5">???????</text>
+  <text x="160" y="100" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#2b4a7a">先查下载体积</text>
+  <text x="160" y="128" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4a6fa5">GetDownloadSizeAsync</text>
 
   <rect x="310" y="60" width="240" height="100" rx="10" fill="#eef7ea" stroke="#5a9e4f" stroke-width="2"/>
-  <text x="430" y="100" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#3a6e31">? Download</text>
-  <text x="430" y="128" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#5a9e4f">PercentComplete / ????</text>
+  <text x="430" y="100" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#3a6e31">再执行下载</text>
+  <text x="430" y="128" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#5a9e4f">进度取已下载字节</text>
 
   <rect x="580" y="60" width="240" height="100" rx="10" fill="#fdf0e7" stroke="#d9833a" stroke-width="2"/>
-  <text x="700" y="100" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#a05a20">?????</text>
-  <text x="700" y="128" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#d9833a">??? Bundle ???</text>
+  <text x="700" y="100" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#a05a20">失败后重试</text>
+  <text x="700" y="128" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#d9833a">已完成的包会自动跳过</text>
 
   <rect x="40" y="190" width="780" height="80" rx="10" fill="#f4f8fd" stroke="#9db8dd" stroke-width="1.5"/>
-  <text x="430" y="225" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#333">???????? + ???????????</text>
-  <text x="430" y="250" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#666">???????????????</text>
+  <text x="430" y="225" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#333">弱网策略以失败重试为主，已下完的 Bundle 不会重复下载</text>
+  <text x="430" y="250" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#666">不要假设字节级断点续传一定可用</text>
 
   <rect x="40" y="290" width="780" height="80" rx="10" fill="#fffbe6" stroke="#e0c060" stroke-width="1.5"/>
-  <text x="430" y="325" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#8a6d1a">????? Unity Cache ? ClearDependencyCache ?????</text>
-  <text x="430" y="350" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#8a6d1a">??? ? Release ??</text>
+  <text x="430" y="325" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#8a6d1a">远程资源进入 Unity 缓存，清缓存才会重新下载</text>
+  <text x="430" y="350" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#8a6d1a">清缓存不等于释放句柄</text>
 </svg>
