@@ -299,3 +299,13 @@ Addressables.LoadAssetAsync<GameObject>("Player");
 - [ ] 掌握 async/await 和协程两种加载方式
 - [ ] 理解引用计数机制和正确释放时机
 - [ ] 能实现远程资源下载和版本管理
+
+---
+
+## 9. 深入教程
+
+本章是资源管理专题里的 **Addressables 速览**，用来选型和对齐概念。从零操作、Catalog 热更、Content Update、与 HybridCLR 协同等，见独立专题：
+
+- [01 - 从零接入与 Play Mode](/Addressables/01-从零接入与PlayMode)
+- [08 - 资源热更常用方法](/Addressables/08-资源热更常用方法)
+- [11 - 工程实践与排错](/Addressables/11-工程实践与排错)

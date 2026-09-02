@@ -3,7 +3,7 @@ layout: home
 hero:
   name: UnityLearn
   text: Unity 进阶学习笔记
-  tagline: Shader · 资源管理 · 热更新 · HybridCLR · 网络同步
+  tagline: Shader · 资源管理 · Addressables · 热更新 · HybridCLR · 网络同步
   actions:
     - theme: brand
       text: 开始阅读
@@ -18,6 +18,9 @@ features:
   - title: 资源管理
     details: AssetBundle、Addressables、加载卸载、内存与分包策略。
     link: /ResourceManagement/01-Unity资源系统概述
+  - title: Addressables
+    details: 从零接入、分组打包、Catalog 热更、下载缓存与工程实践。
+    link: /Addressables/01-从零接入与PlayMode
   - title: 热更新
     details: Lua、ILRuntime、HybridCLR 与资源热更流程、工程实践。
     link: /HotUpdate/01-热更概述与原理
