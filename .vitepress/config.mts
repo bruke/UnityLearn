@@ -4,6 +4,7 @@ import path from 'node:path'
 
 const TOPICS: { dir: string; text: string }[] = [
   { dir: 'UnityShader', text: 'Unity Shader' },
+  { dir: 'UnityLighting', text: 'Unity 光照与渲染' },
   { dir: 'ResourceManagement', text: '资源管理' },
   { dir: 'Addressables', text: 'Addressables' },
   { dir: 'HotUpdate', text: '热更新' },
@@ -48,7 +49,7 @@ function getBase(): string {
 export default defineConfig({
   lang: 'zh-CN',
   title: 'UnityLearn',
-  description: 'Unity 进阶学习笔记：Shader、资源管理、Addressables、热更新、HybridCLR、网络同步',
+  description: 'Unity 进阶学习笔记：Shader、光照与渲染、资源管理、Addressables、热更新、HybridCLR、网络同步',
   base: getBase(),
   srcExclude: ['README.md'],
   ignoreDeadLinks: true,

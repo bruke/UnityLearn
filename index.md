@@ -3,7 +3,7 @@ layout: home
 hero:
   name: UnityLearn
   text: Unity 进阶学习笔记
-  tagline: Shader · 资源管理 · Addressables · 热更新 · HybridCLR · 网络同步
+  tagline: Shader · 光照与渲染 · 资源管理 · Addressables · 热更新 · HybridCLR · 网络同步
   actions:
     - theme: brand
       text: 开始阅读
@@ -15,6 +15,9 @@ features:
   - title: Unity Shader
     details: 从渲染管线、ShaderLab 到光照、后处理、Compute Shader 与实战案例。
     link: /UnityShader/01-基础概念与渲染管线
+  - title: Unity 光照与渲染
+    details: 从光照贴图与探针到体积光、贴花、屏幕空间效果及工程优化。
+    link: /UnityLighting/01-渲染管线与光照能力
   - title: 资源管理
     details: AssetBundle、Addressables、加载卸载、内存与分包策略。
     link: /ResourceManagement/01-Unity资源系统概述
