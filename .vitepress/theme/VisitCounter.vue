@@ -21,14 +21,32 @@ onMounted(load)
 </script>
 
 <template>
-  <p v-if="visit !== null" class="visit-counter">本站访问 {{ visit.toLocaleString('zh-CN') }} 次</p>
+  <div v-if="visit !== null" class="visit-counter">
+    <span class="visit-counter-badge">
+      本站访问 <strong>{{ visit.toLocaleString('zh-CN') }}</strong> 次
+    </span>
+  </div>
 </template>
 
 <style scoped>
 .visit-counter {
-  margin: 4px 0 48px;
+  margin: 16px 0 56px;
   text-align: center;
-  font-size: 13px;
+}
+
+.visit-counter-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  background-color: var(--vp-c-bg-soft);
+  font-size: 15px;
+  line-height: 1.4;
   color: var(--vp-c-text-2);
+}
+
+.visit-counter-badge strong {
+  font-weight: 700;
+  color: var(--vp-c-brand-1);
 }
 </style>
